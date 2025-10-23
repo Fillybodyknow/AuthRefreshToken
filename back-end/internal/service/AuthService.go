@@ -16,6 +16,10 @@ func CheckRegisterRequest(c context.Context, Request model.RegisterRequest) erro
 		return errors.New("กรุณากรอก email")
 	} else if Request.Password == "" {
 		return errors.New("กรุณากรอก password")
+	} else if Request.Verify == "" {
+		return errors.New("กรุณายืนยัน password")
+	} else if Request.Password != Request.Verify {
+		return errors.New("password ไม่ตรงกัน")
 	} else if Request.Profile.FirstName == "" || Request.Profile.LastName == "" {
 		return errors.New("กรุณากรอก ชื่อ-นามสกุล")
 	} else if Request.Profile.Birthdate.IsZero() {

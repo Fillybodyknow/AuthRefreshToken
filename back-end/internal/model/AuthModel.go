@@ -15,6 +15,7 @@ type RegisterRequest struct {
 	Username string         `json:"username"`
 	Email    string         `json:"email"`
 	Password string         `json:"password"`
+	Verify   string         `json:"verify"`
 	Profile  ProfileRequest `json:"profile"`
 }
 
