@@ -15,3 +15,10 @@ export function createRegisterBody(formData) {
     },
   };
 }
+
+export function createLoginBody(formData) {
+  return {
+    email: formData.email,
+    password: formData.password,
+  };
+}
